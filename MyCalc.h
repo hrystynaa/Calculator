@@ -3,7 +3,7 @@
 #include "Operation.h"
 
 class MyCalc
-{	
+{
 protected:
 	static int radix;
 	static bool next;

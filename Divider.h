@@ -1,8 +1,7 @@
 #pragma once
 
 
-class Divider :
-    public Operation
+class Divider : public Operation
 {
     virtual double Do();
 };

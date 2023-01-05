@@ -1,27 +1,12 @@
 #include "framework.h"
+#include "resource1.h"
 #include "MyCalc.h"
-#include "resource.h"
 #include "Adder.h"
 #include "Divider.h"
 #include "Multiplier.h"
 #include "Subtractor.h"
+#include "data.h"
 
-HWND MyCalc::hWndCalc = NULL;
-Operation* MyCalc::curOp = NULL;
-double MyCalc::x = NULL;
-double MyCalc::y = NULL;
-double MyCalc::rez = NULL;
-int MyCalc::radix = NULL;
-bool MyCalc::next = FALSE;
-bool MyCalc::point = FALSE;
-std::wstring MyCalc::nums = L"";
-std::wstring MyCalc::tmpres = L"";
-
-int buttons[26] = { IDC_BA,  IDC_BB,  IDC_BC,  IDC_BD, IDC_BE,  IDC_BF,
-                    IDC_B2,  IDC_B3,  IDC_B4,  IDC_B5,  IDC_B6, IDC_B7,  IDC_B8,  IDC_B9,
-                    IDC_B0,  IDC_B1, IDC_BCANCEL, IDC_BCLEAN, IDC_BDIV,
-                    IDC_BSIGN, IDC_BMINUS, IDC_BMULTI, IDC_BEQUAL, IDC_BPLUS,
-                    IDC_BDIVBY, IDC_BPOINT };
 
 BOOL CALLBACK CalcProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -141,7 +126,7 @@ BOOL CALLBACK CalcProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
         case IDC_RBIN:
             for (int i = 0; i < 26; i++)
             {
-                bool flag = ((i > 13) && (i < 24)) ? true : false;
+                bool flag = ((i > 13) && (i < 23)) ? true : false;
                 EnableWindow(GetDlgItem(hDlg, buttons[i]), flag);
             }
             myCalc->ChangeRadix(2);
@@ -149,7 +134,7 @@ BOOL CALLBACK CalcProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
         case IDC_RHEX:
             for (int i = 0; i < 26; i++)
             {
-                bool flag = i > 23 ? false : true;
+                bool flag = i > 22 ? false : true;
                 EnableWindow(GetDlgItem(hDlg, buttons[i]), flag);
             }
             myCalc->ChangeRadix(16);
@@ -310,7 +295,7 @@ void MyCalc::Oppose()
     std::wstring temp;
     temp = std::to_wstring((-1) * stod(nums));
     while (temp.back() == '0') temp.pop_back();
-    if (temp.back() == '.') temp.pop_back();
+    if (temp.back() == '.') temp.pop_back();   
     next = TRUE;
     Add(temp);
 }

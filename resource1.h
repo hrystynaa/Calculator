@@ -16,7 +16,6 @@
 #define IDC_RBIN                        1006
 #define IDC_RDEC                        1007
 #define IDC_RHEX                        1008
-#define IDC_RBIN2                       1008
 #define IDC_BCLEAN                      1058
 #define IDC_BCANCEL                     1059
 #define IDC_BDIVBY                      1062

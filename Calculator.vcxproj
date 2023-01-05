@@ -129,12 +129,13 @@
   <ItemGroup>
     <ClInclude Include="Adder.h" />
     <ClInclude Include="Calculator.h" />
+    <ClInclude Include="data.h" />
     <ClInclude Include="Divider.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MyCalc.h" />
     <ClInclude Include="Multiplier.h" />
     <ClInclude Include="Operation.h" />
-    <ClInclude Include="Resource.h" />
+    <ClInclude Include="resource1.h" />
     <ClInclude Include="Subtractor.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -153,6 +154,9 @@
   <ItemGroup>
     <Image Include="C:\Users\Admin\Downloads\calculator.ico" />
     <Image Include="calculator.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
